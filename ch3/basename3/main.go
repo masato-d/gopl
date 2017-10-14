@@ -5,5 +5,5 @@ func comma(s string) string {
 	if n <= 3 {
 		return s
 	}
-	return comma(s[:n-3]) + "," + s[:n-3]
+	return comma(s[:n-3]) + "," + s[n-3:]
 }
