@@ -1,11 +1,12 @@
 package main
 
 import (
+	"log"
+	"os"
 	"text/template"
 	"time"
+
 	"github.com/masato-d/gopl/ch4/github"
-	"os"
-	"log"
 )
 
 const templ = `{{.TotalCount}} issue:
