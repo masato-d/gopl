@@ -1,4 +1,4 @@
-package main
+package training3_13
 
 const (
 	KB = 1000
@@ -10,5 +10,3 @@ const (
 	ZB = KB * EB
 	YB = KB * ZB
 )
-
-func main() {}

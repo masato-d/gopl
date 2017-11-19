@@ -1,8 +1,7 @@
-package main
+package training3_10
 
 import (
 	"bytes"
-	"fmt"
 )
 
 func comma(s string) string {
@@ -22,9 +21,4 @@ func comma(s string) string {
 	}
 
 	return buf2.String()
-}
-
-func main() {
-	s := "1234567890"
-	fmt.Println(comma(s))
 }

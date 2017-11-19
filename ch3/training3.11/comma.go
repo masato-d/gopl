@@ -1,7 +1,6 @@
-package main
+package training3_11
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -18,9 +17,4 @@ func comma(s string) string {
 		return s + sp
 	}
 	return comma(s[:n-3]) + "," + s[n-3:] + sp
-}
-
-func main() {
-	s := "123456789.0"
-	fmt.Println(comma(s))
 }
