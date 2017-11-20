@@ -1,6 +1,4 @@
-package main
-
-import "fmt"
+package training4_5
 
 func filter(strings []string) []string {
 	n := len(strings)
@@ -14,9 +12,4 @@ func filter(strings []string) []string {
 		}
 	}
 	return strings[:n]
-}
-
-func main() {
-	s := []string{"a", "b", "b", "c", "a", "c", "d", "d", "d", "e"}
-	fmt.Println(filter(s))
 }
