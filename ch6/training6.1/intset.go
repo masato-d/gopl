@@ -37,7 +37,8 @@ func (s *IntSet) Add(x int) {
 	s.words[word] |= 1 << bit
 }
 
-func (s *IntSet) Remove(x int) {
+func (s *IntSet) Clear() {
+	s.words = []uint64{}
 }
 
 func (s *IntSet) UnionWith(t *IntSet) {
