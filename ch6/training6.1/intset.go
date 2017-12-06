@@ -41,6 +41,12 @@ func (s *IntSet) Clear() {
 	s.words = []uint64{}
 }
 
+func (s *IntSet) Copy() *IntSet {
+	w := make([]uint64, len(s.words))
+	copy(w, s.words)
+	return &IntSet{ words: w }
+}
+
 func (s *IntSet) UnionWith(t *IntSet) {
 	for i, tword := range t.words {
 		if i < len(s.words) {

@@ -27,3 +27,20 @@ func TestClear(t *testing.T) {
 		t.Errorf("failed to clear: %v", x)
 	}
 }
+
+func TestCopy(t *testing.T) {
+	var x IntSet
+	x.Add(1)
+	x.Add(2)
+
+	y := x.Copy()
+
+	if x.Len() != y.Len() || !y.Has(1) || !y.Has(2) {
+		t.Errorf("failed to copy:%v", y)
+	}
+
+	y.Add(3)
+	if x.Has(3) {
+		t.Errorf("failed to copy:%v\n%v", x, y)
+	}
+}
