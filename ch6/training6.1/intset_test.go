@@ -17,6 +17,21 @@ func TestLen(t *testing.T) {
 	}
 }
 
+func TestRemove(t *testing.T) {
+	var x IntSet
+
+	x.Add(1)
+	x.Add(2)
+	if !x.Has(2) {
+		t.Error("x should have 2")
+	}
+
+	x.Remove(2)
+	if x.Has(2) {
+		t.Error("x should not have 2")
+	}
+}
+
 func TestClear(t *testing.T) {
 	var x IntSet
 

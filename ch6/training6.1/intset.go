@@ -37,6 +37,11 @@ func (s *IntSet) Add(x int) {
 	s.words[word] |= 1 << bit
 }
 
+func (s *IntSet) Remove(x int) {
+	word, bit := x/64, uint(x%64)
+	s.words[word] &^= 1 << bit
+}
+
 func (s *IntSet) Clear() {
 	s.words = []uint64{}
 }
