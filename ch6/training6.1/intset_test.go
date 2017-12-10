@@ -59,3 +59,15 @@ func TestCopy(t *testing.T) {
 		t.Errorf("failed to copy:%v\n%v", x, y)
 	}
 }
+
+func TestElem(t *testing.T) {
+	var x IntSet
+	x.Add(1)
+	x.Add(9)
+
+	e := x.Elem()
+
+	if fmt.Sprintf("%v", []int{1, 9}) != fmt.Sprintf("%v", e) {
+		t.Errorf("expected:[1 9] result:%v", e)
+	}
+}

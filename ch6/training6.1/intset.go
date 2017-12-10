@@ -92,6 +92,22 @@ func (s *IntSet) SymmetricDifference(t *IntSet) {
 	}
 }
 
+func (s *IntSet) Elem() []int {
+	var e []int
+
+	for i, word := range s.words {
+		if word == 0 {
+			continue
+		}
+		for j := 0; j < 64; j++ {
+			if word&(1<<uint(j)) != 0 {
+				e = append(e, 64*i+j)
+			}
+		}
+	}
+	return e
+}
+
 func (s *IntSet) String() string {
 	var buf bytes.Buffer
 	buf.WriteByte('{')
