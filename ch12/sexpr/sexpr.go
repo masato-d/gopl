@@ -68,3 +68,11 @@ func encode(buf *bytes.Buffer, v reflect.Value) error {
 	}
 	return nil
 }
+
+func Marshal(v interface{}) ([]byte, error) {
+	var buf bytes.Buffer
+	if err := encode(&buf, reflect.ValueOf(v)); err != nil {
+		return nil, err
+	}
+	return buf.Bytes(), nil
+}
